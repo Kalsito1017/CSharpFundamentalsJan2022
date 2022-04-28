@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _02._Odd_Occurrences
 {
@@ -6,7 +7,28 @@ namespace _02._Odd_Occurrences
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] words = Console.ReadLine().Split();
+            Dictionary<string, int> counts = new Dictionary<string, int>();
+            foreach (string word in words)
+            {
+                string wordInlowerCase = word.ToLower();
+                if (counts.ContainsKey(wordInlowerCase))
+                {
+                    counts[wordInlowerCase]++;
+                }
+                else
+                {
+                    counts.Add(wordInlowerCase, 1);
+                }
+
+            }
+            foreach (var count in counts)
+            {
+                if (count.Value % 2 != 0)
+                {
+                    Console.Write(count.Key + " ");
+                }
+            }
         }
     }
 }

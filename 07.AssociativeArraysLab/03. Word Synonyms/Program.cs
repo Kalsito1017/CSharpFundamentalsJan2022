@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _03._Word_Synonyms
 {
@@ -6,7 +7,27 @@ namespace _03._Word_Synonyms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int pairCount = int.Parse(Console.ReadLine());
+            Dictionary<string, List<string>> synonymList = new Dictionary<string, List<string>>();
+            for (int i = 0; i < pairCount; i++)
+            {
+                string word = Console.ReadLine();
+                string synonym = Console.ReadLine();
+                if (synonymList.ContainsKey(word))
+                {
+                    synonymList[word].Add(synonym);
+                }
+                else
+                {
+                    List<string> newSymlist = new List<string>() { synonym };
+
+                    synonymList.Add(word, newSymlist);
+                }
+            }
+            foreach (var item in synonymList)
+            {
+                Console.WriteLine($"{item.Key} - {string.Join(", ", item.Value)}");
+            }
         }
     }
 }
