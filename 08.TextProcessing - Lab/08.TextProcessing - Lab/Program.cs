@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _08.TextProcessing___Lab
+namespace _01.Reverse_Strings
 {
     internal class Program
     {
