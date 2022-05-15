@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace _04._Text_Filter
 {
@@ -6,7 +7,13 @@ namespace _04._Text_Filter
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            tring[] bannedWords = Console.ReadLine().Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string text = Console.ReadLine();
+            foreach (string word in bannedWords)
+            {
+                text = text.Replace(word, new string('*', word.Length));
+            }
+            Console.WriteLine(text);
         }
     }
 }
