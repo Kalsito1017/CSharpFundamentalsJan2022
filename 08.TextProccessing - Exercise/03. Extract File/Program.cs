@@ -6,7 +6,13 @@ namespace _03._Extract_File
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            string[] input = Console.ReadLine().Split("\\");
+            string file = input[input.Length - 1];
+            string[] splitLastWord = file.Split(".");
+            string fileName = splitLastWord[0];
+            string extencion = splitLastWord[splitLastWord.Length - 1];
+            Console.WriteLine($"File name: {fileName}");
+            Console.WriteLine($"File extension: {extencion}");
         }
     }
 }
