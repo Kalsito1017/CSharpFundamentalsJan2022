@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Linq;
 
 namespace _04._Caesar_Cipher
 {
@@ -17,6 +18,8 @@ namespace _04._Caesar_Cipher
             }
 
             Console.WriteLine(output);
+
+            //idk
         }
     }
 }
