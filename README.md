@@ -1,2 +1,2 @@
 # CSharpFundamentalsJan2022
-Here is some exercises i made from SoftUni
+Here i posted my work on the fundamental thing of C#
